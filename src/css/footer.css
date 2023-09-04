@@ -1,0 +1,45 @@
+.all-footer {
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.txt-footer p {
+  color: white;
+  text-align: center;
+  margin-top: 7px;
+}
+
+.footer-tittle {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.footer-baseline {
+  font-size: 18px;
+  letter-spacing: 1.6px;
+  margin-bottom: 25px;
+}
+
+.email-footer {
+  color: white;
+  text-decoration: none;
+}
+
+.email-footer:hover {
+  color: #50faa8;
+}
+
+.network-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.network-logos img {
+  height: 40px;
+}

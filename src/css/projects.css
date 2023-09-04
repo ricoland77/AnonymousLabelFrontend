@@ -1,0 +1,411 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.all-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0 100px 0;
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+.position-outstock {
+  position: relative;
+}
+
+.carousel-id-albums {
+  width: 400px;
+}
+
+.img-packs {
+  width: 550px;
+}
+
+.outStock-project {
+  width: 100%;
+  padding: 10px 0 7px 0;
+  box-sizing: border-box;
+  background-color: #50faa8ca;
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: #000000 0 0 3px;
+  position: absolute;
+  top: 200px;
+}
+
+.txt-project {
+  max-width: 280px;
+}
+
+.album-type {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.album-packs {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 100;
+}
+
+.album-packs-bold {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.album-packs-ital {
+  font-size: 20px;
+  font-style: italic;
+  line-height: 24px;
+  font-weight: 100;
+}
+
+.more-less-packs {
+  margin-top: 30px;
+}
+
+.album-artist {
+  color: black;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.album-title {
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 200;
+  margin-top: 5px;
+}
+
+.all-album-prices {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.album-price,
+.outstock-price {
+  font-size: 24px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.album-solde {
+  color: red;
+  font-size: 24px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.outstock-price {
+  color: rgb(205, 205, 205);
+}
+
+.album-tva {
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 100;
+  margin-top: 5px;
+}
+
+.album-description {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 100;
+  margin: 30px 0;
+}
+
+.album-titles-cart {
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 100;
+}
+
+.btn-show-more-less {
+  background-color: #50faa868;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-show-more-less:hover {
+  background-color: #50faa8;
+}
+
+.album-availability-cart {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 100;
+  margin-top: 30px;
+}
+
+.album-copyright-cart {
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+/* CAROUSEL PROJECT */
+.carousel-project {
+  /* border: 1px solid red; */
+  max-width: 83.5%;
+  margin: 30px auto;
+  display: flex;
+  overflow-x: scroll;
+  gap: 30px;
+}
+
+.carousel-project::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-packs {
+  /* border: 1px solid red; */
+  max-width: 85.1%;
+  margin: 30px auto;
+  display: flex;
+  overflow-x: scroll;
+  gap: 30px;
+}
+
+.carousel-packs::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-goodies {
+  /* border: 1px solid red; */
+  max-width: 80.05%;
+  margin: 30px auto;
+  display: flex;
+  overflow-x: scroll;
+  gap: 30px;
+}
+
+.carousel-goodies::-webkit-scrollbar {
+  display: none;
+}
+
+.one-project-carousel {
+  border: 1px solid black;
+  background-color: white;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+.img-project-carousel {
+  height: 220px;
+}
+
+.img-goodies-carousel {
+  width: 210px;
+  height: 230px;
+  object-fit: cover;
+}
+
+.img-project-carousel:hover {
+  opacity: 75%;
+}
+
+.img-goodies-carousel:hover {
+  opacity: 75%;
+}
+
+/* LOADER */
+.container-loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar {
+  display: inline-block;
+  width: 4px;
+  height: 15px;
+  background-color: #50faa8;
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 30px;
+  margin: 0 5px;
+  animation-delay: 0.25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #ffff;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
+  }
+}
+
+/************ Packs ***********/
+.tee-shirt-color,
+.tee-shirt-size {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+}
+
+.sizes-select {
+  outline: none;
+  font-size: 14px;
+}
+
+.color-option input[type="radio"] {
+  /* Cacher le bouton radio par défaut */
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.color-option span {
+  /* Style du bouton radio personnalisé */
+  display: inline-block;
+  margin: 5px 5px 0;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid rgb(179, 179, 179);
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.color-option input[type="radio"]:checked + span {
+  /* Style du bouton radio sélectionné */
+  border-color: rgb(179, 179, 179);
+  outline: 1px solid black;
+  border-radius: 5px;
+  outline-offset: 3px;
+}
+
+.error-message {
+  color: red;
+}
+
+/********** Goodies ***********/
+
+/* ********************************** */
+/* ************ Media query ************** */
+/* ********************************** */
+
+/* Mobile S/M/L 200 ===> 425 */
+@media (min-width: 200px) and (max-width: 425px) {
+  .all-project {
+    padding: 150px 0 100px 0;
+    box-sizing: border-box;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .txt-project {
+    max-width: 280px;
+  }
+
+  .carousel-id-albums {
+    width: 90vw;
+  }
+
+  .img-packs {
+    max-width: 90vw;
+  }
+}
+
+/* Mobile S/M/L 426 ===> 768 */
+@media (min-width: 426px) and (max-width: 768px) {
+  .all-project {
+    padding: 150px 0 100px 0;
+    box-sizing: border-box;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .txt-project {
+    max-width: 280px;
+  }
+
+  .carousel-id-albums {
+    width: 65vw;
+  }
+
+  .img-packs {
+    max-width: 90vw;
+  }
+}
+
+/* tablettes  769 ===> 1024 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .all-project {
+    padding: 150px 0 100px 0;
+    box-sizing: border-box;
+  }
+
+  .project {
+    gap: 70px;
+  }
+
+  .txt-project {
+    max-width: 280px;
+  }
+
+  .carousel-id-albums {
+    width: 400px;
+  }
+}

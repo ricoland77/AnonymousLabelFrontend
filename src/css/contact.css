@@ -1,0 +1,141 @@
+.section-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.text-contact {
+  text-align: center;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+.text-contact2 {
+  background-color: #50faa8;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+  margin: 25px 0px 10px 0;
+}
+
+.text-contact3 {
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 100;
+}
+
+.text-contact3 a {
+  text-decoration: none;
+  color: black;
+}
+
+.login-form {
+  background-color: #eeeeee;
+  padding: 0px 30px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10vh 0;
+}
+
+.contact-container > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50faa8;
+  width: 100vw;
+  max-width: 360px;
+  margin: 5vh 0 2vh 0;
+}
+
+.contact-container h2 {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 15px 0px;
+}
+
+.contact-form {
+  display: flex;
+  width: 300px;
+  margin: 30px auto 10px auto;
+  flex-direction: column;
+}
+
+.textSuccess {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.textError {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.contact-error-message {
+  color: red;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact-form > input {
+  border: none;
+  height: 35px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contact-form input::placeholder .text-area-contact::placeholder {
+  color: #777777;
+  font-size: 14px;
+}
+
+input:focus,
+.text-area-contact:focus {
+  background-color: #50faa8;
+  outline: none;
+}
+
+.text-area-contact {
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 5px 0px 0px 10px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+.recaptcha {
+  margin-top: 20px;
+}
+
+.contact-form button {
+  background-color: #50faa8;
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 16px;
+  margin: 10px 0px 20px 0px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  color: white;
+  background-color: rgb(136, 136, 136);
+}

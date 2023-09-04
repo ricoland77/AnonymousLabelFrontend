@@ -1,0 +1,108 @@
+.section-reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-reservation {
+  background-color: rgb(255, 255, 255);
+}
+
+.section-reservation span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50faa8;
+  width: 100vw;
+  max-width: 300px;
+  margin-top: 15vh;
+}
+
+.section-reservation h2 {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 5px 0px;
+  text-align: center;
+}
+
+.all-box-reservation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.box-reservation {
+  border: 1px solid black;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  margin: 30px 0 50px 0;
+}
+
+.box-reservation img {
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+  object-fit: cover;
+  opacity: 93%;
+}
+
+.box-reservation img:hover {
+  opacity: 100%;
+}
+
+.all-txt-box-reservation {
+  padding: 10px;
+}
+
+.more-info-reservation {
+  font-size: 14px;
+  text-decoration: none;
+  color: rgb(152, 152, 152);
+}
+
+.more-info-reservation:hover {
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+}
+
+.price-reservation {
+  border-top: 1px solid rgb(224, 224, 224);
+  padding-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.btn-reservation {
+  border: none;
+  background-color: #50faa8;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.btn-reservation:hover {
+  border-radius: 40px;
+  color: white;
+  background: linear-gradient(-160deg, #50faa8, #000000 50%);
+}
+
+.title-box-reservation {
+  color: #50faa8;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  position: absolute;
+  top: 265px;
+  left: 10px;
+}

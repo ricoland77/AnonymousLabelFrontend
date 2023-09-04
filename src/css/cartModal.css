@@ -1,0 +1,143 @@
+.App {
+  position: relative;
+}
+
+.background-cart-modal {
+  /* border: 1px solid red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.cart-modal {
+  width: 350px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title-cart-modal {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.title-cart {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.close-cart {
+  width: 30px;
+  height: 30px;
+  font-weight: 700;
+  background-color: #50faa8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.list-albums {
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 30px;
+  overflow-y: scroll;
+}
+
+.list-albums::-webkit-scrollbar {
+  display: none;
+}
+
+.line-album {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: flex-end;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid gray;
+  position: relative;
+}
+
+.line-album-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-cart {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.total-price-page {
+  font-weight: 700;
+}
+
+.img-album-cart {
+  height: 100px;
+}
+
+.txt-cart {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+  gap: 10px;
+}
+
+.artist-name {
+  font-weight: 600;
+}
+
+.all-less-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.quantity-num {
+  font-size: 15px;
+}
+
+.less-more-btn {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #50faa8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trash-cart {
+  height: 20px;
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.line-album:hover .trash-cart {
+  display: block;
+}

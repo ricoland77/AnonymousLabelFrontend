@@ -1,0 +1,374 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.all-section {
+  border-bottom: 1px solid black;
+  padding-bottom: 30px;
+}
+
+.title-information-letf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.title-information-letf,
+.shipping-method-letf ~ p {
+  font-size: 20px;
+}
+
+.title-information-letf-bis {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  margin-bottom: 15px;
+  border-top: 1px solid grey;
+}
+
+.title-information-letf-bis p {
+  font-size: 20px;
+}
+
+.shipping-method-letf {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+}
+
+.shipping-method {
+  padding: 20px;
+  border: 1px solid #50faa8;
+  background-color: #50faa857;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-shipping-method {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.radio {
+  margin-bottom: 3px;
+}
+
+.btn-edit {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-continue {
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  background-color: #50faa8;
+  border-radius: 5px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+.btn-continue:hover {
+  border-radius: 40px;
+  color: white;
+  background: linear-gradient(-160deg, #50faa8, #000000 50%);
+}
+
+.infos-text {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 100;
+}
+
+.delivery-address {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 100;
+}
+
+.contact-form-payement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form-payement input,
+select {
+  border: none;
+  height: 35px;
+  padding-left: 10px;
+  margin: 5px 0 20px 0;
+  font-weight: 700;
+}
+
+.title-cart-checkout {
+  /* border: 1px solid red; */
+  display: flex;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.quantity-cart3 {
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: #50faa8;
+  border: 2px solid black;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: -1px;
+  left: 240px;
+}
+
+.modify-cart {
+  text-decoration: none;
+  color: white;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  z-index: 1;
+  background: linear-gradient(-160deg, #50faa8, #000000 50%);
+}
+
+.modify-cart:hover {
+  color: white;
+  background: linear-gradient(160deg, #50faa8, #000000 70%);
+}
+
+.title-postal-code {
+  display: flex;
+  gap: 40%;
+}
+
+.postal-code {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 30px;
+}
+
+.postal-code input {
+  width: 100%;
+}
+
+.line-album-ckeckout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  /* border-bottom: 1px solid gray; */
+  position: relative;
+}
+
+.img-txt-checkout {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.img-album-cart-ckeckout {
+  height: 60px;
+}
+
+.first-txt-checkout,
+.txt-cart-checkout {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+}
+
+.txt-cart-checkout {
+  gap: 10px;
+}
+
+.artist-checkout {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.artist-name-checkout {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.line-album-total-checkout {
+  border-top: 1px solid grey;
+  padding-top: 30px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aaaa {
+  display: flex;
+  justify-content: center;
+}
+
+.bbbb {
+  width: 50%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.success-payment {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #50faa8;
+  text-align: center;
+}
+
+.order-summary {
+  margin-top: 50px;
+}
+
+.continue-browsing {
+  color: black;
+  cursor: pointer;
+  text-align: right;
+}
+
+.continue-browsing p {
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.input-card-element {
+  background-color: #50faa86b;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.form-payment-left.full-width {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  background-color: white;
+}
+
+/* ********************************** */
+/* ************ Media query ************** */
+/* ********************************** */
+
+/* Smartphones S 250 ===> 768 */
+@media (min-width: 250px) and (max-width: 768px) {
+  .container-form-payement {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+    position: relative;
+  }
+
+  .form-payment-left {
+    /* border: 1px solid green; */
+    background-color: rgb(237, 237, 237);
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 150px auto 50px;
+    width: 100%;
+  }
+
+  .resume-right {
+    background-color: #50faa828;
+    width: 100%;
+    margin-bottom: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}
+
+/* Portable S 769 ===> 1440 */
+@media (min-width: 769px) and (max-width: 1440px) {
+  .container-form-payement {
+    /* border: 1px solid red; */
+    padding-top: 150px;
+    padding-bottom: 150px;
+    position: relative;
+  }
+
+  .form-payment-left {
+    /* border: 1px solid green; */
+    background-color: rgb(237, 237, 237);
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 0 50px 30px;
+    width: 50%;
+  }
+
+  .resume-right {
+    background-color: #50faa828;
+    width: 40%;
+    padding: 10px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 150px;
+    right: 30px;
+  }
+
+  .resume-right.is-absolute {
+    position: absolute;
+    top: 793px;
+    left: 56.9vw;
+  }
+}
+
+/* Portable S 1441 ===> 4000 */
+@media (min-width: 1441px) and (max-width: 4000px) {
+  .container-form-payement {
+    /* border: 1px solid red; */
+    padding-top: 150px;
+    position: relative;
+  }
+
+  .form-payment-left {
+    /* border: 1px solid green; */
+    background-color: rgb(237, 237, 237);
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 0 50px 30px;
+    width: 50%;
+  }
+
+  .resume-right {
+    background-color: #50faa828;
+    width: 600px;
+    margin-bottom: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 150px;
+    left: 54vw;
+  }
+
+  .resume-right.is-absolute {
+    position: absolute;
+    top: 793px;
+    left: 41.4vw;
+  }
+}

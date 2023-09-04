@@ -1,0 +1,32 @@
+.btn-player {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pictos-sound {
+  height: 20px;
+}
+
+/* .player {
+  position: absolute;
+  top: 9px;
+  left: 101px;
+  z-index: 1;
+} */
+
+/* ********************************** */
+/* ************ Media query ************** */
+/* ********************************** */
+
+/* Mobile S/M/L 200 ===> 425 */
+@media (min-width: 200px) and (max-width: 425px) {
+  .player {
+    left: 95px;
+  }
+}

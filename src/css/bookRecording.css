@@ -1,0 +1,298 @@
+.all-book-recording {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0 100px 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.all-book-recording > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50faa8;
+  width: 100vw;
+  max-width: 250px;
+  margin: 10vh 0vw 0vh 0vw;
+}
+
+.all-book-recording h2 {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 5px 0px;
+}
+
+.all-book-recording > p {
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 100;
+  margin: 2vh 20vw 1vh 20vw;
+}
+
+.form-container {
+  /* border: 1px solid rgb(0, 255, 26); */
+  width: 100%;
+  padding: 30px 10vw 30px 10vw;
+  box-sizing: border-box;
+}
+
+.first-container {
+  /* border: 1px solid blue; */
+  width: 100%;
+  padding: 30px 10vw 30px 10vw;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.second-container {
+  /* border: 1px solid red; */
+}
+
+.three-container {
+  /* border: 1px solid rgb(192, 50, 205); */
+  padding: 0px 20px 10px 20px;
+  box-sizing: border-box;
+}
+
+.select-title {
+  /* border: 1px solid green; */
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.title-select-date {
+  /* border: 1px solid rgb(3, 215, 3); */
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.info-hour {
+  /* border: 1px solid rgb(3, 215, 3); */
+  color: gray;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.service-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+  position: relative;
+}
+
+.title-service-details {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.chevron-details {
+  width: 25px;
+  height: 10px;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+#box-in-visible {
+  /* border: 1px solid red; */
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-top: 10px;
+  margin-top: 10px;
+  padding-bottom: 35px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.title-box-in-visible {
+  border: none;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.date-box-in-visible {
+  border: none;
+  font-size: 16px;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+
+.txt-box-in-visible {
+  color: gray;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 100;
+}
+
+.div-next-details {
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+.btn-next-details {
+  width: 100%;
+  border: none;
+  background-color: #50faa8;
+  border-radius: 5px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+.btn-next-details:hover {
+  border-radius: 40px;
+  color: white;
+  background: linear-gradient(-160deg, #50faa8, #000000 50%);
+}
+
+.months-input {
+  font-size: 20px;
+  padding: 0px 10px;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  appearance: none;
+  cursor: pointer;
+}
+
+.months-input:hover {
+  color: rgb(65, 65, 65);
+}
+
+.months:checked {
+  background: #50faa8;
+}
+
+.prev-next-btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 20px;
+  border: none;
+  /* border: 2px solid rgb(159, 159, 159); */
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* **************************** */
+/* BookRecordingForm FORMULAIRE */
+/* **************************** */
+.first-form-container {
+  /* border: 1px solid blue; */
+  width: 100%;
+  padding: 30px 0vw 30px 0vw;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.four-container {
+  /* border: 1px solid rgb(192, 50, 205); */
+  padding: 0px 20px 10px 20px;
+  box-sizing: border-box;
+}
+
+.title-payement-details {
+  font-size: 20px;
+  font-weight: 100;
+  margin: 30px 0 10px 0;
+}
+
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.txt-total-line {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 100;
+  margin-bottom: 15px;
+}
+
+.input-name-email {
+  /* border: 1px solid rgb(0, 179, 255); */
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0 5px;
+}
+
+.input-reservation {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #50faa8;
+  height: 35px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.checkbox-container-bis {
+  /* border: 1px solid rgb(0, 179, 255); */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.textarea-reservation {
+  font-family: "Nunito Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #50faa8;
+  height: 100px;
+  padding-left: 10px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.sms-reminder {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+/* Mobile S/M/L 200 ===> 768 */
+@media (min-width: 200px) and (max-width: 768px) {
+  .first-container,
+  .first-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 0;
+  }
+
+  .three-container,
+  .four-container {
+    width: 300px;
+    /* border: 1px solid rgb(192, 50, 205); */
+    padding: 0px 0px 10px 0px;
+    box-sizing: border-box;
+  }
+}

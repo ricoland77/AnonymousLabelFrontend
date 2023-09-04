@@ -1,0 +1,214 @@
+.welcome-text {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 100;
+  margin: 15vh 20vw 0vh 20vw;
+}
+
+.section-store,
+.section-store-bis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-store {
+  margin: 5vh 0 15vh 0;
+}
+
+.section-store-bis {
+  background-color: rgb(237, 237, 237);
+  padding-bottom: 10vh;
+}
+
+.section-store span,
+.section-store-bis span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #50faa8;
+  padding: 0 10px;
+  margin-top: 5vh;
+}
+
+.section-store h2,
+.section-store-bis h2 {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 5px 0px;
+}
+
+.store {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.album {
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 7vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.album-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: left;
+}
+
+.album-img-bis {
+  width: 400px;
+  opacity: 100%;
+}
+
+.album-img-bis:hover,
+.album-img-ter:hover {
+  opacity: 65%;
+}
+
+.album-img-ter {
+  height: 300px;
+}
+
+.project-type {
+  color: white;
+  background-color: black;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.artist-album {
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.title-album {
+  color: white;
+  background: linear-gradient(-160deg, #50faa8, #000000 50%);
+  background-color: #50faa8;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 200;
+  margin-top: 10px;
+}
+
+.all-prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-album,
+.price-outstock {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.price-solde {
+  color: red;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.price-outstock {
+  color: rgb(205, 205, 205);
+}
+
+.tva {
+  font-size: 13px;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.outStock {
+  width: 100%;
+  padding: 5px 0 3px 0;
+  box-sizing: border-box;
+  background-color: #50faa8ca;
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: #000000 0 0 3px;
+  position: absolute;
+  top: 55px;
+  left: 0;
+}
+
+.outNew {
+  width: 50%;
+  padding: 5px 0 3px 0;
+  box-sizing: border-box;
+  background-color: #50faa8ca;
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: #000000 0 0 3px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  transform: rotate(-4deg);
+}
+
+.btn-cart {
+  border: none;
+  background-color: #50faa8;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-cart:hover {
+  border-radius: 40px;
+  color: white;
+  background: linear-gradient(-160deg, #50faa8, #000000 50%);
+}
+
+.disable-btn {
+  pointer-events: none;
+}
+
+/* ********************************** */
+/* ************ Media query ************** */
+/* ********************************** */
+
+/* Mobile S/M/L 200 ===> 425 */
+@media (min-width: 200px) and (max-width: 425px) {
+  .store {
+    gap: 0px;
+  }
+  .album-img-bis {
+    width: 250px;
+  }
+}

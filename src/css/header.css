@@ -1,0 +1,297 @@
+.integer-header {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+}
+
+.all-top-menu {
+  /* border: 1px solid green; */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  top: 10px;
+  padding-right: 9px;
+}
+
+.disconnect-and-sound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+}
+
+.top-menu {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  z-index: 1;
+}
+
+.all-header {
+  /* border: 1px solid blue; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px 0px 5px;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.btn-login,
+.btn-signup {
+  color: white;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.btn-login {
+  background: linear-gradient(-160deg, #50faa8, #000000 50%);
+}
+
+.btn-signup {
+  background: linear-gradient(160deg, #50faa8, #000000 50%);
+}
+
+.btn-login:hover {
+  color: white;
+  background: linear-gradient(160deg, #50faa8, #000000 70%);
+}
+
+.btn-signup:hover {
+  color: white;
+  background: linear-gradient(-160deg, #50faa8, #000000 70%);
+}
+
+.logo-span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 15px;
+}
+
+.logo-al {
+  height: 100px;
+}
+
+.txt-logo {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.all-header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-nav {
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10px;
+  gap: 30px;
+}
+
+.menu {
+  float: left;
+}
+
+.contenu {
+  margin: 0px -5px 0px -15px;
+  padding: 0px 13px 15px 13px;
+  text-align: left;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.95) 91.2%,
+    #ffffff00 75%,
+    #ffffff00 75%
+  );
+}
+
+.sous-menu {
+  display: none;
+  position: absolute;
+  z-index: 3;
+}
+
+.element-sous-menu {
+  padding-top: 15px;
+}
+
+.menu:hover .sous-menu {
+  display: block;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: gray;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  border-bottom: 2px solid gray;
+}
+
+.active {
+  color: #50faa8;
+  /* font-size: 15px; */
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  border-bottom: 2px solid #50faa8;
+}
+
+.menu-burger {
+  z-index: 1;
+  cursor: pointer;
+}
+
+.burger {
+  position: absolute;
+  top: 40px;
+  left: 50vw;
+  height: 27px;
+}
+
+/* .cart-sound {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+} */
+
+.shopping-cart-picto {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  height: 40px;
+}
+
+.quantity-cart {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  right: 47px;
+}
+
+.quantity-cart2 {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: #50faa8;
+  border: 2px solid black;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  right: 47px;
+}
+
+/* ********************************** */
+/* ************ Media query ************** */
+/* ********************************** */
+
+/* Mobile S/M/L 200 ===> 425 */
+@media (min-width: 200px) and (max-width: 425px) {
+  /* .integer-header {
+    width: 100vw;
+  } */
+
+  .header-nav {
+    display: none;
+  }
+
+  .txt-logo {
+    display: none;
+  }
+}
+
+/* Tablette 426 ===> 768 */
+@media (min-width: 426px) and (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+
+  .txt-logo {
+    display: none;
+  }
+}
+
+/* Portable S 769 ===> 1024 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu-burger {
+    display: none;
+  }
+
+  .txt-logo {
+    display: none;
+  }
+
+  .header-nav {
+    gap: 15px;
+  }
+}
+
+/* Portable L 1025 ===> 1440 */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .menu-burger {
+    display: none;
+  }
+
+  .txt-logo {
+    font-size: 22px;
+  }
+
+  .header-nav {
+    gap: 2vw;
+  }
+}
+
+/* 4K 1441 ===> 2560 */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .menu-burger {
+    display: none;
+  }
+}

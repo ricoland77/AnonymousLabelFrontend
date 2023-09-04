@@ -1,0 +1,328 @@
+.all-section-detail {
+  /* border: 1px solid red; */
+  display: flex;
+  position: relative;
+  top: 100px;
+  padding: 100px 30px;
+  margin-bottom: 100px;
+  background: radial-gradient(at 90% 40%, white, #838383);
+}
+
+.section-detail-description {
+  /* border: 1px solid rgb(0, 255, 89); */
+  /* position: relative; */
+}
+
+.detail-title {
+  /* border: 1px solid rgb(0, 76, 255); */
+  font-size: 80px;
+  font-weight: 700;
+  border-bottom: 3px solid #50faa8;
+  animation-duration: 1.25s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    width: 0%;
+  }
+
+  to {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.zzz {
+  border: 1px solid green;
+  width: 40%;
+  aspect-ratio: 16/9;
+}
+
+.detail-txt {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 100;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+.detail-txt-key {
+  color: #50faa8;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.detail-title,
+.detail-txt,
+.detail-txt-key {
+  margin: 0vh 4vw 2vh 0;
+}
+
+.image-detail {
+  width: 400px;
+  height: 280px;
+  object-fit: cover;
+}
+
+.detail-logos-medias {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.logotype-detail {
+  height: 30px;
+}
+
+.detail-actuality {
+  /* border: 1px solid red; */
+  padding: 50px 30px;
+  background-color: rgb(255, 255, 255);
+}
+
+.detail-actuality span,
+.all-carousel-video span,
+.all-carousel-discography span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50faa8;
+  width: 100vw;
+  max-width: 180px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.detail-actuality h2,
+.all-carousel-video h2,
+.all-carousel-discography h2 {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+.actuality {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-actuality {
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+}
+
+.cover-actuality-long {
+  height: 300px;
+  margin-right: 50px;
+}
+
+.literature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.cover-literature {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  margin-top: 50px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.extract-actuality {
+  background-color: #c2c2c2;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.image-extract {
+  height: 200px;
+}
+
+.title-extract {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.txt-extract {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding: 3px 5px;
+  background: linear-gradient(-160deg, #50faa8, #000000 50%);
+  border-radius: 10px;
+  font-style: italic;
+  font-weight: 200;
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  transform: rotate(-5deg);
+}
+
+.txt-detail-actuality h3 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.extern-artists {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+}
+
+.txt-detail-actuality p {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 100;
+  text-align: justify;
+}
+
+.all-carousel-video {
+  /* border: 1px rgb(34, 0, 255) solid; */
+  height: 70vh;
+  background: radial-gradient(white, #a3a3a3 70%);
+  padding: 100px 0;
+}
+
+.video-carousel {
+  /* border: 1px red solid; */
+  width: 640px;
+  height: 100%;
+  margin: 50px auto;
+}
+
+.cover {
+  width: 600px;
+  height: 600px;
+  margin: 30px auto;
+}
+
+.all-carousel-discography {
+  height: 90vh;
+  padding: 100px 0;
+}
+
+/* ********************************** */
+/* ************ Media query ************** */
+/* ********************************** */
+
+/* Mobiles Tablette 200 ===> 768 */
+@media (min-width: 200px) and (max-width: 768px) {
+  .all-section-detail {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .detail-txt,
+  .detail-txt-key {
+    margin: 0vh 0vw 2vh 0;
+  }
+
+  .detail-title {
+    font-size: 65px;
+    margin: 3vh 0 2vh 0;
+  }
+
+  .image-detail {
+    width: 100%;
+    height: 100%;
+  }
+
+  .actuality {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 1vw;
+  }
+
+  .cover-actuality {
+    margin-right: 0px;
+  }
+
+  .cover-actuality-long {
+    height: 110px;
+    margin-right: 0px;
+  }
+
+  .literature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .extract-actuality {
+    margin-right: 0px;
+  }
+
+  .all-carousel-video {
+    /* border: solid 1px red; */
+    height: 70vh;
+    padding: 100px 0;
+  }
+
+  .video-carousel {
+    /* border: solid 1px green; */
+    width: 100%;
+    height: 100%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .ratio-video {
+    height: auto !important;
+    aspect-ratio: 16/9;
+  }
+
+  .cover {
+    width: 90vw;
+    max-width: 500px;
+    height: 90vw;
+    margin: 30px auto;
+  }
+
+  .all-carousel-discography {
+    background: white;
+    padding: 100px 0 150px 0;
+  }
+}
+
+/* Mobiles Tablette 769 ===> 1024 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .actuality {
+    padding: 30px 1vw;
+  }
+}
+
+/* Mobiles Tablette 769 ===> 3000 */
+@media (min-width: 1024px) and (max-width: 3000px) {
+  .actuality {
+    padding: 30px 150px;
+  }
+}
