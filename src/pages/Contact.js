@@ -76,7 +76,6 @@ const Contact = () => {
             message: message,
           }
         );
-        // console.log(response.data.message);
         alert(response.data.message);
       } catch (error) {
         console.log(error.response);
