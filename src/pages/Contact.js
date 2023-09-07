@@ -67,12 +67,15 @@ const Contact = () => {
       setErrorMessage("Veuillez saisir un message");
     } else {
       try {
-        const response = await axios.post("http://localhost:4000/contact", {
-          name: name,
-          email: email,
-          subject: subject,
-          message: message,
-        });
+        const response = await axios.post(
+          `${process.env.SERVER_ADRESS}/contact`,
+          {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message,
+          }
+        );
         // console.log(response.data.message);
         alert(response.data.message);
       } catch (error) {
@@ -84,10 +87,13 @@ const Contact = () => {
   const verifyToken = async (token) => {
     let APIResponse = [];
     try {
-      let response = await axios.post(`http://localhost:4000/verify-token`, {
-        reCAPTCHA_TOKEN: token,
-        Secret_Key: SECRET_KEY,
-      });
+      let response = await axios.post(
+        `${process.env.SERVER_ADRESS}/verify-token`,
+        {
+          reCAPTCHA_TOKEN: token,
+          Secret_Key: SECRET_KEY,
+        }
+      );
 
       APIResponse.push(response["data"]);
       return APIResponse;

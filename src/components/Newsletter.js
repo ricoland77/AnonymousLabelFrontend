@@ -42,9 +42,12 @@ const Newsletter = () => {
                 event.preventDefault();
                 setErrorMessage("");
 
-                const response = await axios.post("http://localhost:4000/", {
-                  email: email,
-                });
+                const response = await axios.post(
+                  `${process.env.SERVER_ADRESS}/`,
+                  {
+                    email: email,
+                  }
+                );
                 // console.log(response.data.message);
                 alert(response.data.message);
               } catch (error) {

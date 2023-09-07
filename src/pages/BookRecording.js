@@ -86,7 +86,6 @@ const Styles = styled.div`
 const BookRecording = () => {
   const [startDate, setStartDate] = useState("");
   const [chevron, setChevron] = useState(false);
-  // const [errorMessage, setErrorMessage] = useState(null);
 
   //   const years = getYear(new Date()) + 1;
   const months = [
@@ -116,27 +115,6 @@ const BookRecording = () => {
       new Date() < date
     );
   };
-
-  // const handleSubmit = async (event) => {
-  //   try {
-  //     event.preventDefault();
-  //     const response = await axios.post(
-  //       `http://localhost:3000/booking/enregistrement`,
-  //       {
-  //         date: startDate,
-  //       }
-  //     );
-  //     console.log(response.data);
-  //     if (startDate) {
-  //       alert("Cet horaire n'est pas disponible.");
-  //     }
-  //   } catch (error) {
-  //     if (error.response.status === 409) {
-  //       setErrorMessage("CHoisissez un horaire disponible");
-  //     }
-  //     console.log(error.message);
-  //   }
-  // };
 
   return (
     <main className="container">

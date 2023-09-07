@@ -22,10 +22,13 @@ const Login = ({ setUser }) => {
     try {
       event.preventDefault();
       setIsLoading(true);
-      const response = await axios.post(`http://localhost:4000/user/login`, {
-        email: email,
-        password: password,
-      });
+      const response = await axios.post(
+        `${process.env.SERVER_ADRESS}/user/login`,
+        {
+          email: email,
+          password: password,
+        }
+      );
       if (response.data.token) {
         setUser(response.data.token);
         setIsLoading(false);

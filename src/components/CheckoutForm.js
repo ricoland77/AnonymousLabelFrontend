@@ -69,7 +69,7 @@ const CheckoutForm = ({
       };
 
       const response = await axios.post(
-        "http://localhost:4000/payment",
+        `${process.env.SERVER_ADRESS}/payment`,
         orderData
       );
       console.log(response.data);

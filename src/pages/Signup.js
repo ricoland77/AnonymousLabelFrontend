@@ -20,11 +20,14 @@ const Signup = ({ setUser }) => {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const response = await axios.post(`http://localhost:4000/user/signup`, {
-        email: email,
-        password: password,
-        username: username,
-      });
+      const response = await axios.post(
+        `${process.env.SERVER_ADRESS}/user/signup`,
+        {
+          email: email,
+          password: password,
+          username: username,
+        }
+      );
       if (response.data.token) {
         setUser(response.data.token);
         navigate("/");

@@ -24,6 +24,8 @@ const Project = ({
   let { id } = useParams();
   // console.log(id);
 
+  // `http://localhost:3000/projects?id=${id}`
+
   useEffect(() => {
     const fetchDataProjects = async () => {
       try {

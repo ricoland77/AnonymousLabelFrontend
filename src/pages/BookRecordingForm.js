@@ -220,7 +220,7 @@ const BookRecordingForm = () => {
                         setErrorMessage("");
 
                         const response = await axios.post(
-                          "http://localhost:4000/booking/enregistrement/formulaire",
+                          `${process.env.SERVER_ADRESS}/booking/enregistrement/formulaire`,
                           {
                             name: name,
                             email: email,
