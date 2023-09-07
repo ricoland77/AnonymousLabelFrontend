@@ -8,7 +8,9 @@ import PayementForm from "../components/PayementForm";
 import CheckoutForm from "../components/CheckoutForm";
 
 // const STRIPE_SITE_KEY = process.env.REACT_APP_STRIPE_SECRET_KEY;
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_SECRET_KEY);
+const stripePromise = loadStripe(
+  "pk_test_51NXKJpC5SSNjldEjJDSWge9phJeDwy8WjgnxZTHrxJjOuXP0za9f5HNqMjLGSU3RuNhzQ5rnvixAhayJtv1ZoEU700JtMuXUNG"
+);
 
 const CheckOut = ({
   albumAddToCart,
