@@ -21,7 +21,7 @@ const Signup = ({ setUser }) => {
     try {
       event.preventDefault();
       const response = await axios.post(
-        `${process.env.SERVER_ADRESS}/user/signup`,
+        `${process.env.REACT_APP_SERVER_ADDRESS}/user/signup`,
         {
           email: email,
           password: password,

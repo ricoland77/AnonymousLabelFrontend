@@ -43,7 +43,7 @@ const Newsletter = () => {
                 setErrorMessage("");
 
                 const response = await axios.post(
-                  `${process.env.SERVER_ADRESS}/`,
+                  `${process.env.REACT_APP_SERVER_ADDRESS}/`,
                   {
                     email: email,
                   }

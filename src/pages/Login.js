@@ -23,7 +23,7 @@ const Login = ({ setUser }) => {
       event.preventDefault();
       setIsLoading(true);
       const response = await axios.post(
-        `${process.env.SERVER_ADRESS}/user/login`,
+        `${process.env.REACT_APP_SERVER_ADDRESS}/user/login`,
         {
           email: email,
           password: password,
