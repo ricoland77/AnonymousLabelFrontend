@@ -120,7 +120,7 @@ const Contact = () => {
                 contactanonymouslabel@gmail.com
               </a>
             </p>
-            <p className="text-contact3">06 14 47 13 58</p>
+            <p className="text-contact3">06 14 47 13 58 !</p>
             <div className="network-logos">
               <Link
                 to="https://www.youtube.com/channel/UCvESjnkNe9EFwqvOukAdTwQ"
