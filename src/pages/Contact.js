@@ -45,12 +45,6 @@ const Contact = () => {
     if (token) {
       let valid_token = await verifyToken(token);
       setValidToken(valid_token);
-
-      // if (valid_token[0].success === true) {
-      //   setSuccessMsg("Bravo ! Vous avez soumis le formulaire");
-      // } else {
-      //   setErrorMsg("Désolé ! Vérifiez que vous n'êtes pas un robot");
-      // }
     }
 
     if (!name) {
@@ -68,7 +62,7 @@ const Contact = () => {
     } else {
       try {
         const response = await axios.post(
-          `${process.env.SERVER_ADRESS}/contact`,
+          `${process.env.REACT_APP_SERVER_ADDRESS}/contact`,
           {
             name: name,
             email: email,
@@ -87,11 +81,12 @@ const Contact = () => {
     let APIResponse = [];
     try {
       let response = await axios.post(
-        `${process.env.SERVER_ADRESS}/verify-token`,
+        `${process.env.REACT_APP_SERVER_ADDRESS}/verify-token`,
         {
           reCAPTCHA_TOKEN: token,
           Secret_Key: SECRET_KEY,
         }
+        // ${process.env.SERVER_ADDRESS}
       );
 
       APIResponse.push(response["data"]);
