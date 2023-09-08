@@ -38,7 +38,7 @@ const BookRecordingForm = () => {
           <h2>Enregistrement</h2>
         </span>
         <p>
-          Consultez nos disponibilités, réservez la date et l’heure qui vous
+          Consultez nos disponibilités et réservez la date et l’heure qui vous
           conviennent.
         </p>
 
