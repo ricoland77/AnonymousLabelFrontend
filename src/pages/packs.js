@@ -1,6 +1,8 @@
 import "../css/projects.css";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import store from "../json/store.json";
+
 import Newsletter from "../components/Newsletter";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -19,25 +21,29 @@ const Packs = ({
   errorMessage,
   errorMessage2,
 }) => {
-  const [data, setData] = useState();
+  const [, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
 
   let { id } = useParams();
   // console.log(id);
+  const article = store.packs.find((pack) => pack.id === id);
 
   useEffect(() => {
-    const fetchDataPacks = async () => {
+    const fetchDataProjects = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/packs?id=${id}`);
-        const result = await response.json();
+        const response = await axios.get(
+          `${process.env.REACT_APP_SERVER_ADDRESS}/store/packs?id=${id}`
+        );
+        const result = response.data;
+        console.log("result=>", result);
         setData(result);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
       }
     };
-    fetchDataPacks();
+    fetchDataProjects();
   }, [id]);
 
   const onColorChange = (color) => {
@@ -60,165 +66,159 @@ const Packs = ({
     <>
       <div className="container">
         <div className="all-project">
-          {data.map((pack) => {
-            return (
-              <div key={pack.id} className="project">
-                <div className="position-outstock">
-                  <img
-                    src={pack.picture1}
-                    alt="Visuel de l'album"
-                    className="img-packs"
-                  />
-                  {pack.stock === 0 && (
-                    <p className="outStock-project"> {pack.outStock} </p>
+          <div key={article.id} className="project">
+            <div className="position-outstock">
+              <img
+                src={article.picture1}
+                alt="Visuel de l'album"
+                className="img-packs"
+              />
+              {article.stock === 0 && (
+                <p className="outStock-project"> {article.outStock} </p>
+              )}
+            </div>
+
+            <div className="txt-project">
+              <p className="album-type">{article.type}</p>
+              <h3 className="album-artist">{article.artist}</h3>
+              <h4 className="album-title">{article.name}</h4>
+
+              {article.stock === 0 ? (
+                <p className="outstock-price">00,00 €</p>
+              ) : (
+                <div>
+                  {article.solde ? (
+                    <div className="all-album-prices">
+                      <p className="album-price">
+                        <s>{article.price} €</s>
+                      </p>
+                      <p className="album-solde">{article.solde} €</p>
+                    </div>
+                  ) : (
+                    <p className="album-price">{article.price} €</p>
                   )}
                 </div>
+              )}
 
-                <div className="txt-project">
-                  <p className="album-type">{pack.type}</p>
-                  <h3 className="album-artist">{pack.artist}</h3>
-                  <h4 className="album-title">{pack.name}</h4>
+              <p className="album-tva">{article.tva}</p>
+              <p className="album-tva">{article.subscriber}</p>
 
-                  {pack.stock === 0 ? (
-                    <p className="outstock-price">00,00 €</p>
-                  ) : (
-                    <div>
-                      {pack.solde ? (
-                        <div className="all-album-prices">
-                          <p className="album-price">
-                            <s>{pack.price} €</s>
-                          </p>
-                          <p className="album-solde">{pack.solde} €</p>
-                        </div>
-                      ) : (
-                        <p className="album-price">{pack.price} €</p>
-                      )}
-                    </div>
-                  )}
+              {showMore && (
+                <>
+                  <div className="more-less-packs">
+                    <p className="album-packs-bold">{article.type}</p>
+                    <p className="album-packs-ital">{article.name}</p>
+                  </div>
+                  <div className="more-less-packs">
+                    <p className="album-packs">{article.thanks}</p>
+                    <p className="album-packs">{article.copyright}</p>
+                  </div>
+                </>
+              )}
 
-                  <p className="album-tva">{pack.tva}</p>
-                  <p className="album-tva">{pack.subscriber}</p>
+              {showMore ? (
+                <button
+                  className="btn-show-more-less"
+                  onClick={() => {
+                    setShowMore(!showMore);
+                  }}
+                >
+                  En savoir moins
+                </button>
+              ) : (
+                <button
+                  className="btn-show-more-less"
+                  onClick={() => {
+                    setShowMore(!showMore);
+                  }}
+                >
+                  En savoir plus
+                </button>
+              )}
 
-                  {showMore && (
-                    <>
-                      <div className="more-less-packs">
-                        <p className="album-packs-bold">{pack.type}</p>
-                        <p className="album-packs-ital">{pack.name}</p>
-                      </div>
-                      <div className="more-less-packs">
-                        <p className="album-packs">{pack.thanks}</p>
-                        <p className="album-packs">{pack.copyright}</p>
-                      </div>
-                    </>
-                  )}
-
-                  {showMore ? (
-                    <button
-                      className="btn-show-more-less"
-                      onClick={() => {
-                        setShowMore(!showMore);
-                      }}
-                    >
-                      En savoir moins
-                    </button>
-                  ) : (
-                    <button
-                      className="btn-show-more-less"
-                      onClick={() => {
-                        setShowMore(!showMore);
-                      }}
-                    >
-                      En savoir plus
-                    </button>
-                  )}
-
-                  {/* CHOIX DE LA COULEUR */}
-                  {pack.colors.length !== 0 && (
-                    <div className="tee-shirt-color">
-                      <fieldset>
-                        {!errorMessage || selectedColor ? (
-                          <legend>
-                            Choix de votre couleur : {selectedColor}
-                          </legend>
-                        ) : (
-                          <p className="error-message">{errorMessage}</p>
-                        )}
-
-                        {pack.colors.map((color) => (
-                          <label key={color} className="color-option">
-                            <input
-                              type="radio"
-                              name="color"
-                              value={color}
-                              checked={selectedColor === color}
-                              onChange={() => onColorChange(color)}
-                            />
-
-                            <span
-                              className="color-radio"
-                              style={{
-                                backgroundColor:
-                                  selectedColor === color ? color : color,
-                              }}
-                            />
-                          </label>
-                        ))}
-                      </fieldset>
-                    </div>
-                  )}
-
-                  {/* CHOIX DE LA TAILLE */}
-                  <div className="tee-shirt-size">
-                    {!errorMessage2 || selectedSize ? (
-                      <label htmlFor="sizes-select">
-                        Choix de votre taille : {selectedSize}
-                      </label>
+              {/* CHOIX DE LA COULEUR */}
+              {article.colors.length !== 0 && (
+                <div className="tee-shirt-color">
+                  <fieldset>
+                    {!errorMessage || selectedColor ? (
+                      <legend>Choix de votre couleur : {selectedColor}</legend>
                     ) : (
-                      <label htmlFor="sizes-select">
-                        <p className="error-message">{errorMessage2}</p>
-                      </label>
+                      <p className="error-message">{errorMessage}</p>
                     )}
 
-                    <select
-                      name="sizes"
-                      className="sizes-select"
-                      value={selectedSize}
-                      onChange={handleSizeChange}
-                    >
-                      <option value="">Selectionner</option>
-                      <option value="S">S</option>
-                      <option value="M">M</option>
-                      <option value="L">L</option>
-                      <option value="XL">XL</option>
-                      <option value="XXL">XXL</option>
-                      <option value="XXXL">XXXL</option>
-                    </select>
-                  </div>
+                    {article.colors.map((color) => (
+                      <label key={color} className="color-option">
+                        <input
+                          type="radio"
+                          name="color"
+                          value={color}
+                          checked={selectedColor === color}
+                          onChange={() => onColorChange(color)}
+                        />
 
-                  {pack.stock === 0 ? (
-                    <button
-                      className="btn-cart disable-btn"
-                      onClick={() => {
-                        setDisplayCart(!displayCart);
-                      }}
-                    >
-                      Rupture de stock
-                    </button>
-                  ) : (
-                    <button
-                      className="btn-cart"
-                      onClick={() => {
-                        setDisplayCart(!displayCart);
-                        itemsAddToCart(pack);
-                      }}
-                    >
-                      Ajouter au panier
-                    </button>
-                  )}
+                        <span
+                          className="color-radio"
+                          style={{
+                            backgroundColor:
+                              selectedColor === color ? color : color,
+                          }}
+                        />
+                      </label>
+                    ))}
+                  </fieldset>
                 </div>
+              )}
+
+              {/* CHOIX DE LA TAILLE */}
+              <div className="tee-shirt-size">
+                {!errorMessage2 || selectedSize ? (
+                  <label htmlFor="sizes-select">
+                    Choix de votre taille : {selectedSize}
+                  </label>
+                ) : (
+                  <label htmlFor="sizes-select">
+                    <p className="error-message">{errorMessage2}</p>
+                  </label>
+                )}
+
+                <select
+                  name="sizes"
+                  className="sizes-select"
+                  value={selectedSize}
+                  onChange={handleSizeChange}
+                >
+                  <option value="">Selectionner</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
               </div>
-            );
-          })}
+
+              {article.stock === 0 ? (
+                <button
+                  className="btn-cart disable-btn"
+                  onClick={() => {
+                    setDisplayCart(!displayCart);
+                  }}
+                >
+                  Rupture de stock
+                </button>
+              ) : (
+                <button
+                  className="btn-cart"
+                  onClick={() => {
+                    setDisplayCart(!displayCart);
+                    itemsAddToCart(article);
+                  }}
+                >
+                  Ajouter au panier
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
 

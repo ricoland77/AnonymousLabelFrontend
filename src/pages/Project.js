@@ -1,4 +1,5 @@
 import "../css/projects.css";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import store from "../json/store.json";
 
@@ -17,20 +18,21 @@ const Project = ({
   displayCart,
   setDisplayCart,
 }) => {
-  const [data, setData] = useState();
+  const [, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
 
   let { id } = useParams();
   // console.log(id);
-
-  // `http://localhost:3000/projects?id=${id}`
+  const article = store.projects.find((project) => project.id === id);
 
   useEffect(() => {
     const fetchDataProjects = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/projects?id=${id}`);
-        const result = await response.json();
+        const response = await axios.get(
+          `${process.env.REACT_APP_SERVER_ADDRESS}/store/projects?id=${id}`
+        );
+        const result = response.data;
         setData(result);
         setIsLoading(false);
       } catch (error) {
@@ -52,125 +54,119 @@ const Project = ({
     <>
       <div className="container">
         <div className="all-project">
-          {data.map((album) => {
-            return (
-              <div key={album.id} className="project">
-                {/* VISUEL ALBUM */}
-                <div className="position-outstock">
-                  {album.picture2 ? (
-                    <Carousel
-                      className="carousel-id-albums"
-                      showThumbs={false}
-                      infiniteLoop
-                      autoPlay
-                      interval={10000}
-                    >
-                      <img src={album.picture1} alt="Visuel de l'album" />
-                      <img src={album.picture2} alt="Visuel de l'album" />
-                    </Carousel>
-                  ) : (
-                    <img
-                      className="carousel-id-albums"
-                      src={album.picture1}
-                      alt="Visuel de l'album"
-                    />
-                  )}
+          <div key={article.id} className="project">
+            <div className="position-outstock">
+              {article.picture2 ? (
+                <Carousel
+                  className="carousel-id-albums"
+                  showThumbs={false}
+                  infiniteLoop
+                  autoPlay
+                  interval={10000}
+                >
+                  <img src={article.picture1} alt="Visuel de l'album" />
+                  <img src={article.picture2} alt="Visuel de l'album" />
+                </Carousel>
+              ) : (
+                <img
+                  className="carousel-id-albums"
+                  src={article.picture1}
+                  alt="Visuel de l'album"
+                />
+              )}
 
-                  {album.stock === 0 && (
-                    <p className="outStock-project"> {album.outStock} </p>
-                  )}
-                </div>
+              {article.stock === 0 && (
+                <p className="outStock-project"> {article.outStock} </p>
+              )}
+            </div>
 
-                <div className="txt-project">
-                  <p className="album-type">{album.type}</p>
-                  <h3 className="album-artist">{album.artist}</h3>
-                  <h4 className="album-title">{album.name}</h4>
+            <div className="txt-project">
+              <p className="album-type">{article.type}</p>
+              <h3 className="album-artist">{article.artist}</h3>
+              <h4 className="album-title">{article.name}</h4>
 
-                  {album.stock === 0 ? (
-                    <p className="outstock-price">00,00 €</p>
-                  ) : (
-                    <div>
-                      {album.solde ? (
-                        <div className="all-album-prices">
-                          <p className="album-price">
-                            <s>{album.price} €</s>
-                          </p>
-                          <p className="album-solde">{album.solde} €</p>
-                        </div>
-                      ) : (
-                        <p className="album-price">{album.price} €</p>
-                      )}
+              {article.stock === 0 ? (
+                <p className="outstock-price">00,00 €</p>
+              ) : (
+                <div>
+                  {article.solde ? (
+                    <div className="all-album-prices">
+                      <p className="album-price">
+                        <s>{article.price} €</s>
+                      </p>
+                      <p className="album-solde">{article.solde} €</p>
                     </div>
-                  )}
-
-                  <p className="album-tva">{album.tva}</p>
-                  <p className="album-description">{album.description}</p>
-                  {showMore && (
-                    <>
-                      <div>
-                        {album.titles.map((title, index) => {
-                          return (
-                            <div key={index}>
-                              <p className="album-titles-cart">{title}</p>
-                            </div>
-                          );
-                        })}
-                      </div>
-                      <div>
-                        <p className="album-availability-cart">
-                          {album.availability}
-                        </p>
-                        <p className="album-copyright-cart">
-                          {album.copyright}
-                        </p>
-                      </div>
-                    </>
-                  )}
-
-                  {showMore ? (
-                    <button
-                      className="btn-show-more-less"
-                      onClick={() => {
-                        setShowMore(!showMore);
-                      }}
-                    >
-                      En savoir moins
-                    </button>
                   ) : (
-                    <button
-                      className="btn-show-more-less"
-                      onClick={() => {
-                        setShowMore(!showMore);
-                      }}
-                    >
-                      En savoir plus
-                    </button>
-                  )}
-
-                  {album.stock === 0 ? (
-                    <button
-                      className="btn-cart disable-btn"
-                      onClick={() => {
-                        setDisplayCart(!displayCart);
-                      }}
-                    >
-                      Rupture de stock
-                    </button>
-                  ) : (
-                    <button
-                      className="btn-cart"
-                      onClick={() => {
-                        setDisplayCart(!displayCart);
-                        albumAddToCart(album);
-                      }}
-                    >
-                      Ajouter au panier
-                    </button>
+                    <p className="album-price">{article.price} €</p>
                   )}
                 </div>
-              </div>
-            );
-          })}
+              )}
+
+              <p className="album-tva">{article.tva}</p>
+              <p className="album-description">{article.description}</p>
+              {showMore && (
+                <>
+                  <div>
+                    {article.titles.map((title, index) => {
+                      return (
+                        <div key={index}>
+                          <p className="album-titles-cart">{title}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div>
+                    <p className="album-availability-cart">
+                      {article.availability}
+                    </p>
+                    <p className="album-copyright-cart">{article.copyright}</p>
+                  </div>
+                </>
+              )}
+
+              {showMore ? (
+                <button
+                  className="btn-show-more-less"
+                  onClick={() => {
+                    setShowMore(!showMore);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  En savoir moins
+                </button>
+              ) : (
+                <button
+                  className="btn-show-more-less"
+                  onClick={() => {
+                    setShowMore(!showMore);
+                  }}
+                >
+                  En savoir plus
+                </button>
+              )}
+
+              {article.stock === 0 ? (
+                <button
+                  className="btn-cart disable-btn"
+                  onClick={() => {
+                    setDisplayCart(!displayCart);
+                  }}
+                >
+                  Rupture de stock
+                </button>
+              ) : (
+                <button
+                  className="btn-cart"
+                  onClick={() => {
+                    setDisplayCart(!displayCart);
+                    albumAddToCart(article);
+                  }}
+                >
+                  Ajouter au panier
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
 

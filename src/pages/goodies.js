@@ -1,6 +1,8 @@
 import "../css/projects.css";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import store from "../json/store.json";
+
 import Newsletter from "../components/Newsletter";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -24,25 +26,29 @@ const Goodies = ({
   errorMessage2,
   setErrorMessage2,
 }) => {
-  const [data, setData] = useState();
+  const [, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
 
   let { id } = useParams();
   // console.log(id);
+  const article = store.goodies.find((goodie) => goodie.id === id);
 
   useEffect(() => {
-    const fetchDataGoodies = async () => {
+    const fetchDataProjects = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/goodies?id=${id}`);
-        const result = await response.json();
+        const response = await axios.get(
+          `${process.env.REACT_APP_SERVER_ADDRESS}/store/goodies?id=${id}`
+        );
+        const result = response.data;
+        console.log("result=>", result);
         setData(result);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
       }
     };
-    fetchDataGoodies();
+    fetchDataProjects();
   }, [id]);
 
   const onColorChange = (color) => {
@@ -65,213 +71,207 @@ const Goodies = ({
     <>
       <div className="container">
         <div className="all-project">
-          {data.map((goodies) => {
-            return (
-              <div key={goodies.id} className="project">
-                {/* VISUEL ALBUM */}
-                <div className="position-outstock">
-                  {goodies.picture2 &&
-                  goodies.picture3 &&
-                  goodies.picture4 &&
-                  goodies.picture5 ? (
-                    <Carousel
-                      className="carousel-id-albums"
-                      showThumbs={false}
-                      infiniteLoop
-                      autoPlay
-                      interval={10000}
-                    >
-                      <img src={goodies.picture1} alt="Visuel de l'album" />
-                      <img src={goodies.picture2} alt="Visuel de l'album" />
-                      <img src={goodies.picture3} alt="Visuel de l'album" />
-                      <img src={goodies.picture4} alt="Visuel de l'album" />
-                      <img src={goodies.picture5} alt="Visuel de l'album" />
-                    </Carousel>
-                  ) : goodies.picture2 &&
-                    goodies.picture3 &&
-                    goodies.picture4 &&
-                    !goodies.picture5 ? (
-                    <Carousel
-                      className="carousel-id-albums"
-                      showThumbs={false}
-                      infiniteLoop
-                      autoPlay
-                      interval={10000}
-                    >
-                      <img src={goodies.picture1} alt="Visuel de l'album" />
-                      <img src={goodies.picture2} alt="Visuel de l'album" />
-                      <img src={goodies.picture3} alt="Visuel de l'album" />
-                      <img src={goodies.picture4} alt="Visuel de l'album" />
-                    </Carousel>
-                  ) : (
-                    <img
-                      className="carousel-id-albums"
-                      src={goodies.picture1}
-                      alt="Visuel de l'album"
-                    />
-                  )}
+          <div key={article.id} className="project">
+            {/* VISUEL ALBUM */}
+            <div className="position-outstock">
+              {article.picture2 &&
+              article.picture3 &&
+              article.picture4 &&
+              article.picture5 ? (
+                <Carousel
+                  className="carousel-id-albums"
+                  showThumbs={false}
+                  infiniteLoop
+                  autoPlay
+                  interval={10000}
+                >
+                  <img src={article.picture1} alt="Visuel de l'album" />
+                  <img src={article.picture2} alt="Visuel de l'album" />
+                  <img src={article.picture3} alt="Visuel de l'album" />
+                  <img src={article.picture4} alt="Visuel de l'album" />
+                  <img src={article.picture5} alt="Visuel de l'album" />
+                </Carousel>
+              ) : article.picture2 &&
+                article.picture3 &&
+                article.picture4 &&
+                !article.picture5 ? (
+                <Carousel
+                  className="carousel-id-albums"
+                  showThumbs={false}
+                  infiniteLoop
+                  autoPlay
+                  interval={10000}
+                >
+                  <img src={article.picture1} alt="Visuel de l'album" />
+                  <img src={article.picture2} alt="Visuel de l'album" />
+                  <img src={article.picture3} alt="Visuel de l'album" />
+                  <img src={article.picture4} alt="Visuel de l'album" />
+                </Carousel>
+              ) : (
+                <img
+                  className="carousel-id-albums"
+                  src={article.picture1}
+                  alt="Visuel de l'album"
+                />
+              )}
 
-                  {goodies.stock === 0 && (
-                    <p className="outStock-project"> {goodies.outStock} </p>
+              {article.stock === 0 && (
+                <p className="outStock-project"> {article.outStock} </p>
+              )}
+            </div>
+
+            <div className="txt-project">
+              <p className="album-type">{article.type}</p>
+              <h3 className="album-artist">{article.artist}</h3>
+              <h4 className="album-title">{article.name}</h4>
+
+              {article.stock === 0 ? (
+                <p className="outstock-price">00,00 €</p>
+              ) : (
+                <div>
+                  {article.solde ? (
+                    <div className="all-album-prices">
+                      <p className="album-price">
+                        <s>{article.price} €</s>
+                      </p>
+                      <p className="album-solde">{article.solde} €</p>
+                    </div>
+                  ) : (
+                    <p className="album-price">{article.price} €</p>
                   )}
                 </div>
+              )}
 
-                <div className="txt-project">
-                  <p className="album-type">{goodies.type}</p>
-                  <h3 className="album-artist">{goodies.artist}</h3>
-                  <h4 className="album-title">{goodies.name}</h4>
+              <p className="album-tva">{article.tva}</p>
+              <p className="album-description">{article.description}</p>
 
-                  {goodies.stock === 0 ? (
-                    <p className="outstock-price">00,00 €</p>
-                  ) : (
-                    <div>
-                      {goodies.solde ? (
-                        <div className="all-album-prices">
-                          <p className="album-price">
-                            <s>{goodies.price} €</s>
-                          </p>
-                          <p className="album-solde">{goodies.solde} €</p>
-                        </div>
-                      ) : (
-                        <p className="album-price">{goodies.price} €</p>
-                      )}
-                    </div>
-                  )}
+              {showMore && (
+                <>
+                  <div className="more-less-packs">
+                    <p className="album-packs-bold">{article.collection}</p>
+                    <p className="album-packs">{article.severalColors}</p>
+                  </div>
+                  <div className="more-less-packs">
+                    <p className="album-packs">{article.availablesizes}</p>
+                    <p className="album-packs">{article.children}</p>
+                    <p className="album-packs">{article.man}</p>
+                    <p className="album-packs">{article.woman}</p>
+                  </div>
+                  <div className="more-less-packs">
+                    <p className="album-packs">{article.question}</p>
+                    <p className="album-packs">{article.contact}</p>
+                    <p className="album-packs">{article.phone}</p>
+                  </div>
+                  <div className="more-less-packs">
+                    <p className="album-packs">{article.thanks}</p>
+                    <p className="album-packs">{article.sign}</p>
+                  </div>
+                </>
+              )}
 
-                  <p className="album-tva">{goodies.tva}</p>
-                  <p className="album-description">{goodies.description}</p>
+              {showMore ? (
+                <button
+                  className="btn-show-more-less"
+                  onClick={() => {
+                    setShowMore(!showMore);
+                  }}
+                >
+                  En savoir moins
+                </button>
+              ) : (
+                <button
+                  className="btn-show-more-less"
+                  onClick={() => {
+                    setShowMore(!showMore);
+                  }}
+                >
+                  En savoir plus
+                </button>
+              )}
 
-                  {showMore && (
-                    <>
-                      <div className="more-less-packs">
-                        <p className="album-packs-bold">{goodies.collection}</p>
-                        <p className="album-packs">{goodies.severalColors}</p>
-                      </div>
-                      <div className="more-less-packs">
-                        <p className="album-packs">{goodies.availablesizes}</p>
-                        <p className="album-packs">{goodies.children}</p>
-                        <p className="album-packs">{goodies.man}</p>
-                        <p className="album-packs">{goodies.woman}</p>
-                      </div>
-                      <div className="more-less-packs">
-                        <p className="album-packs">{goodies.question}</p>
-                        <p className="album-packs">{goodies.contact}</p>
-                        <p className="album-packs">{goodies.phone}</p>
-                      </div>
-                      <div className="more-less-packs">
-                        <p className="album-packs">{goodies.thanks}</p>
-                        <p className="album-packs">{goodies.sign}</p>
-                      </div>
-                    </>
-                  )}
-
-                  {showMore ? (
-                    <button
-                      className="btn-show-more-less"
-                      onClick={() => {
-                        setShowMore(!showMore);
-                      }}
-                    >
-                      En savoir moins
-                    </button>
-                  ) : (
-                    <button
-                      className="btn-show-more-less"
-                      onClick={() => {
-                        setShowMore(!showMore);
-                      }}
-                    >
-                      En savoir plus
-                    </button>
-                  )}
-
-                  {/* CHOIX DE LA COULEUR */}
-                  {goodies.colors.length !== 0 && (
-                    <div className="tee-shirt-color">
-                      <fieldset>
-                        {!errorMessage || selectedColor ? (
-                          <legend>
-                            Choix de votre couleur : {selectedColor}
-                          </legend>
-                        ) : (
-                          <p className="error-message">{errorMessage}</p>
-                        )}
-
-                        {goodies.colors.map((color) => (
-                          <label key={color} className="color-option">
-                            <input
-                              type="radio"
-                              name="color"
-                              value={color}
-                              checked={selectedColor === color}
-                              onChange={() => onColorChange(color)}
-                            />
-
-                            <span
-                              className="color-radio"
-                              style={{
-                                backgroundColor:
-                                  selectedColor === color ? color : color,
-                              }}
-                            />
-                          </label>
-                        ))}
-                      </fieldset>
-                    </div>
-                  )}
-
-                  {/* CHOIX DE LA TAILLE */}
-                  <div className="tee-shirt-size">
-                    {!errorMessage2 || selectedSize ? (
-                      <label htmlFor="sizes-select">
-                        Choix de votre taille : {selectedSize}
-                      </label>
+              {/* CHOIX DE LA COULEUR */}
+              {article.colors.length !== 0 && (
+                <div className="tee-shirt-color">
+                  <fieldset>
+                    {!errorMessage || selectedColor ? (
+                      <legend>Choix de votre couleur : {selectedColor}</legend>
                     ) : (
-                      <label htmlFor="sizes-select">
-                        <p className="error-message">{errorMessage2}</p>
-                      </label>
+                      <p className="error-message">{errorMessage}</p>
                     )}
 
-                    <select
-                      name="sizes"
-                      className="sizes-select"
-                      value={selectedSize}
-                      onChange={handleSizeChange}
-                    >
-                      <option value="">Selectionner</option>
-                      <option value="S">S</option>
-                      <option value="M">M</option>
-                      <option value="L">L</option>
-                      <option value="XL">XL</option>
-                      <option value="XXL">XXL</option>
-                      <option value="XXXL">XXXL</option>
-                    </select>
-                  </div>
+                    {article.colors.map((color) => (
+                      <label key={color} className="color-option">
+                        <input
+                          type="radio"
+                          name="color"
+                          value={color}
+                          checked={selectedColor === color}
+                          onChange={() => onColorChange(color)}
+                        />
 
-                  {goodies.stock === 0 ? (
-                    <button
-                      className="btn-cart disable-btn"
-                      onClick={() => {
-                        setDisplayCart(!displayCart);
-                      }}
-                    >
-                      Rupture de stock
-                    </button>
-                  ) : (
-                    <button
-                      className="btn-cart"
-                      onClick={() => {
-                        setDisplayCart(!displayCart);
-                        itemsAddToCart(goodies);
-                      }}
-                    >
-                      Ajouter au panier
-                    </button>
-                  )}
+                        <span
+                          className="color-radio"
+                          style={{
+                            backgroundColor:
+                              selectedColor === color ? color : color,
+                          }}
+                        />
+                      </label>
+                    ))}
+                  </fieldset>
                 </div>
+              )}
+
+              {/* CHOIX DE LA TAILLE */}
+              <div className="tee-shirt-size">
+                {!errorMessage2 || selectedSize ? (
+                  <label htmlFor="sizes-select">
+                    Choix de votre taille : {selectedSize}
+                  </label>
+                ) : (
+                  <label htmlFor="sizes-select">
+                    <p className="error-message">{errorMessage2}</p>
+                  </label>
+                )}
+
+                <select
+                  name="sizes"
+                  className="sizes-select"
+                  value={selectedSize}
+                  onChange={handleSizeChange}
+                >
+                  <option value="">Selectionner</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
               </div>
-            );
-          })}
+
+              {article.stock === 0 ? (
+                <button
+                  className="btn-cart disable-btn"
+                  onClick={() => {
+                    setDisplayCart(!displayCart);
+                  }}
+                >
+                  Rupture de stock
+                </button>
+              ) : (
+                <button
+                  className="btn-cart"
+                  onClick={() => {
+                    setDisplayCart(!displayCart);
+                    itemsAddToCart(article);
+                  }}
+                >
+                  Ajouter au panier
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
 
