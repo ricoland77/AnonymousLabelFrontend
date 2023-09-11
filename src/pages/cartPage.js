@@ -104,6 +104,7 @@ const CarPage = ({
           </div>
         )}
       </div>
+
       <div
         className="cart-payement"
         style={cart.length === 0 ? { display: "none" } : {}}

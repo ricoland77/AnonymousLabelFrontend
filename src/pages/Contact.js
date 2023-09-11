@@ -86,7 +86,6 @@ const Contact = () => {
           reCAPTCHA_TOKEN: token,
           Secret_Key: SECRET_KEY,
         }
-        // ${process.env.SERVER_ADDRESS}
       );
 
       APIResponse.push(response["data"]);
@@ -108,7 +107,7 @@ const Contact = () => {
         </div>
 
         <section className="section-contact">
-          <div>
+          <div className="contact-container-left">
             <p className="text-contact">
               VOUS SOUHAITEZ NOUS SOUMETTRE VOTRE PROJET ?
             </p>
@@ -149,7 +148,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="contact-container">
+          <div className="contact-container-right">
             <span>
               <h2>Soumettre ton projet</h2>
             </span>

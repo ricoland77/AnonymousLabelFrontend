@@ -1,8 +1,6 @@
-.section-contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+.contact-container-left {
+  margin-top: 170px;
+  max-width: 320px;
 }
 
 .text-contact {
@@ -36,10 +34,12 @@
 
 .login-form {
   background-color: #eeeeee;
-  padding: 0px 30px;
+  padding: 0px 15px;
+  box-sizing: border-box;
 }
 
-.contact-container {
+.contact-container-right {
+  width: 360px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,26 +48,25 @@
   padding: 10vh 0;
 }
 
-.contact-container > span {
+.contact-container-right > span {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #50faa8;
-  width: 100vw;
-  max-width: 360px;
-  margin: 5vh 0 2vh 0;
+  width: 332px;
+  margin: 0 0 2vh 0;
 }
 
-.contact-container h2 {
+.contact-container-right h2 {
   font-size: 30px;
   font-weight: 700;
-  padding: 15px 0px;
+  padding: 15px 0;
 }
 
 .contact-form {
   display: flex;
-  width: 300px;
-  margin: 30px auto 10px auto;
+  width: 100%;
+  margin: 30px 0 10px 0;
   flex-direction: column;
 }
 
@@ -138,4 +137,37 @@ input:focus,
 .contact-form button:hover {
   color: white;
   background-color: rgb(136, 136, 136);
+}
+
+/* ********************************** */
+/* ************ Media query ************** */
+/* ********************************** */
+
+/* Mobile S/M/L 200 ===> 1023 */
+@media (min-width: 200px) and (max-width: 1023px) {
+  .section-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .contact-container-right {
+    padding: 0vh 0 10vh;
+  }
+}
+
+/* Portable L 1025 ===> 2560 */
+@media (min-width: 1024px) and (max-width: 2560px) {
+  .section-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .contact-container-right {
+    margin-top: 100px;
+  }
 }
