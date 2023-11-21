@@ -9,13 +9,13 @@ const Reservation = () => {
   return (
     <>
       <main className="container">
-        <div className="img-center">
+        {/* <div className="img-center">
           <img
             className="artists"
             src="https://res.cloudinary.com/dn7pf2dts/image/upload/v1682327530/AnonymousLabel/studio/reservation_z8hhfn.jpg"
             alt="Artistes"
           />
-        </div>
+        </div> */}
 
         <section className="section-reservation">
           <span>

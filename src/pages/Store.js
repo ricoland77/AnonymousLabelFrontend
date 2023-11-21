@@ -14,31 +14,31 @@ const Store = ({
   return (
     <>
       <div className="container">
-        <div className="img-center">
-          <img
-            className="artists"
-            src="https://res.cloudinary.com/dn7pf2dts/image/upload/v1681917861/AnonymousLabel/actualites/actuality-visual02_ejfded.jpg"
-            alt="Artistes"
-          />
-        </div>
-
-        <p className="welcome-text">
-          Bienvenue sur notre <strong>boutique en ligne</strong>, ici vous
-          pouvez acheter et payer directement sur Internet avec un accès
-          sécurisé. Les œuvres musicales constituant notre catalogue sont
-          déposées à la SACEM et protégées par les lois du Copyright en vigueur.{" "}
-          <em>
-            « Toute représentation ou reproduction intégrale ou partielle faite
-            sans le consentement de l’auteur ou de ses ayants droits ou ayants
-            cause, est illicite »
-          </em>{" "}
-          (Art. L 122-4 du Code de la Propriété Intellectuelle).
-        </p>
-
-        {/* Album, EP, compilations */}
         <section className="section-store">
           <span>
-            <h2>Projets (albums, EP, compilations)</h2>
+            <h2 className="first-tittle-store">Boutique</h2>
+          </span>
+          <p className="welcome-text">
+            Bienvenue sur notre <strong>boutique en ligne</strong>, ici vous
+            pouvez acheter et payer directement sur Internet avec un accès
+            sécurisé. Les œuvres musicales constituant notre catalogue sont
+            déposées à la SACEM et protégées par les lois du Copyright en
+            vigueur.{" "}
+            <em>
+              « Toute représentation ou reproduction intégrale ou partielle
+              faite sans le consentement de l’auteur ou de ses ayants droits ou
+              ayants cause, est illicite »
+            </em>{" "}
+            (Art. L 122-4 du Code de la Propriété Intellectuelle).
+          </p>
+        </section>
+
+        {/* Album, EP, compilations */}
+        <section className="section-store02">
+          <span>
+            <h2 className="second-titlle-store">
+              Projets (albums, EP, compilations)
+            </h2>
           </span>
 
           <div className="store">
@@ -171,9 +171,11 @@ const Store = ({
         </section>
 
         {/* Goodies (Tee-shirts, Sweats) */}
-        <section className="section-store-bis">
+        <section className="section-store02">
           <span>
-            <h2>Goodies (Tee-shirts, Sweats)</h2>
+            <h2 className="second-titlle-store">
+              Goodies (Tee-shirts, Sweats)
+            </h2>
           </span>
 
           <div className="store">

@@ -189,7 +189,7 @@ const MenuBurger = ({ setDisplayMenu }) => {
                   Nos réalisations
                 </NavLink>
               </li>
-              <li
+              {/* <li
                 onClick={() => {
                   window.scrollTo(0, 0);
                 }}
@@ -200,7 +200,7 @@ const MenuBurger = ({ setDisplayMenu }) => {
                 >
                   Actualités
                 </NavLink>
-              </li>
+              </li> */}
               <li
                 onClick={() => {
                   window.scrollTo(0, 0);
@@ -241,14 +241,14 @@ const MenuBurger = ({ setDisplayMenu }) => {
                     </NavLink>
                   </div>
 
-                  <div className="sous-menu2 contenu2">
+                  {/* <div className="sous-menu2 contenu2">
                     <NavLink
                       to="/store/cartecadeau"
                       className={active1 === true ? "active" : "burger-link"}
                     >
                       Carte cadeau
                     </NavLink>
-                  </div>
+                  </div> */}
                 </div>
               </li>
               <li

@@ -3,17 +3,19 @@
   top: 100px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-bottom: 70px;
 }
 
-.section-artists span {
+.first-tittle {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #50faa8;
-  width: 100vw;
-  max-width: 150px;
-  margin: 10vh 20vw 0vh 20vw;
+  text-transform: uppercase;
+  font-size: 100px;
+  font-weight: 900;
+  color: rgb(230, 230, 230);
+  padding: 5px 0px;
 }
 
 .all-they-trusted-us {
@@ -44,7 +46,6 @@
   margin: 10vh 0vw 0vh 0vw;
 }
 
-.section-artists h2,
 .they-trusted-us h2 {
   font-size: 30px;
   font-weight: 700;
@@ -52,9 +53,10 @@
 }
 
 .description-section {
+  text-align: left;
   font-weight: 100;
   line-height: 20px;
-  margin: 2vh 20vw 1vh 20vw;
+  margin: 2vh 23vw 1vh 23vw;
 }
 
 .presentation-artists {
@@ -141,4 +143,34 @@
 .logotypes {
   /* border: 1px red solid; */
   height: 18px;
+}
+
+/* ********************************** */
+/* ************ Media query ************** */
+/* ********************************** */
+
+/* Mobile S/M/L 200 ===> 425 */
+@media (min-width: 200px) and (max-width: 425px) {
+  .first-tittle {
+    font-size: 50px;
+  }
+
+  .description-section {
+    margin: 2vh 10vw 1vh 10vw;
+  }
+}
+
+/* tablette 426 ===> 768 */
+@media (min-width: 426px) and (max-width: 768px) {
+  .first-tittle {
+    font-size: 50px;
+  }
+
+  .description-section {
+    margin: 2vh 10vw 1vh 10vw;
+  }
+}
+
+/* tablette 769 ===> 1024 */
+@media (min-width: 769px) and (max-width: 1024px) {
 }

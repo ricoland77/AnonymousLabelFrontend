@@ -98,13 +98,13 @@ const Contact = () => {
   return (
     <>
       <div className="container">
-        <div className="img-center">
+        {/* <div className="img-center">
           <img
             className="artists"
             src="https://res.cloudinary.com/dn7pf2dts/image/upload/v1681813617/AnonymousLabel/contact/contact_jshxyo.webp"
             alt="Contact"
           />
-        </div>
+        </div> */}
 
         <section className="section-contact">
           <div className="contact-container-left">

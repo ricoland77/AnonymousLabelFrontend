@@ -4,27 +4,22 @@ import realisations from "../json/realisations.json";
 
 import Newsletter from "../components/Newsletter";
 
-import pictoMore from "../images/picto-more.png";
+// import pictoMore from "../images/picto-more.png";
 import scred from "../images/scred.jpg";
 
 const Realisations = () => {
   return (
     <>
       <div className="container">
-        <div className="img-center">
-          <img
-            className="artists"
-            src="https://res.cloudinary.com/dn7pf2dts/image/upload/v1681917296/AnonymousLabel/covers/realisation-visual02_gcsl0j.jpg"
-            alt="realisations"
-          />
-        </div>
         <section className="section-rea">
           <span>
-            <h2>Nos réalisations</h2>
+            <h2 className="first-tittle-realisation">Nos réalisations</h2>
           </span>
           <p className="rea-description">
-            Toutes nos réalisations sont disponibles à la Scred Boutique :<br />
-            80, rue Marcadet – 75018 Paris. <br />
+            Toute nos réalisations en physique sont disponibles à la Scred
+            boutique :
+            <br />
+            80, rue Marcadet – 75018 Paris - www.scredboutique.com <br />
             <a
               className="scred-boutique"
               href="https://scredboutique.com/"
@@ -36,8 +31,12 @@ const Realisations = () => {
           </p>
 
           <p className="rea-description-bis">
-            Nos projets sont également disponibles sur toutes les plateformes de
-            streaming et de téléchargement.
+            Nos projets sont également disponibles sur toutes les plates formes
+            de streaming et de téléchargement.
+            <br />
+            Pour acquérir ou pour plus d'informations concernant nos projets, il
+            suffit de cliquer sur les pochettes, qui vous dirigeront vers des
+            liens sécurisés.
           </p>
 
           <div className="all-realisations">
@@ -45,27 +44,20 @@ const Realisations = () => {
               {realisations.albums.map((album) => {
                 return (
                   <div className="box-realisation" key={album.id}>
-                    <img
-                      className="visual-album"
-                      src={album.picture}
-                      alt="visual-album"
-                    />
-                    <h4>{album.name}</h4>
-                    <p>{album.type}</p>
-                    {album.link && (
-                      <a
-                        className="realisation-link"
-                        href={album.link}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          className="picto-more"
-                          src={pictoMore}
-                          alt="picto Plus"
-                        />
-                      </a>
-                    )}
+                    <a
+                      className="realisation-link"
+                      href={album.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        className="visual-album"
+                        src={album.picture}
+                        alt="visual-album"
+                      />
+                      <h4>{album.name}</h4>
+                      <p>{album.type}</p>
+                    </a>
                   </div>
                 );
               })}

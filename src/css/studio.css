@@ -22,7 +22,33 @@
   margin: 90px 0 0 0;
 }
 
-.section-studio span,
+.second-titlle-equipment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50faa8;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  width: 100vw;
+  max-width: 300px;
+  padding: 5px 0;
+  margin: 10vh 0vw 0vh 0vw;
+}
+
+.first-tittle-studio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 900;
+  color: rgb(230, 230, 230);
+  padding: 5px 0px;
+  margin: 20vh 0vw 0vh 0vw;
+}
+
 .section-join-us span {
   display: flex;
   justify-content: center;
@@ -42,7 +68,6 @@
   max-width: 300px;
 }
 
-.section-studio h2,
 .section-join-us h2,
 .section-services h2 {
   font-size: 30px;
@@ -189,6 +214,9 @@
 
 /* Mobile S/M/L tablettes 200 ===> 768 */
 @media (min-width: 200px) and (max-width: 768px) {
+  .first-tittle-studio {
+    font-size: 50px;
+  }
   .all-join-us {
     display: flex;
     flex-direction: column;

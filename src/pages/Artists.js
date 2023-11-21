@@ -9,18 +9,10 @@ const Artists = () => {
   return (
     <>
       <main className="container">
-        <div className="img-center">
-          <img
-            className="artists"
-            src="https://res.cloudinary.com/dn7pf2dts/image/upload/v1681916307/AnonymousLabel/portraits-artistes/artists-visual_tjfqfj.webp"
-            alt="Artistes"
-          />
-        </div>
-
         {/* Artistes */}
         <section className="section-artists">
           <span>
-            <h2>Artistes</h2>
+            <h2 className="first-tittle">Artistes</h2>
           </span>
           <p className="description-section">
             Le label représente des auteurs, compositeur, beatmakers, chanteurs

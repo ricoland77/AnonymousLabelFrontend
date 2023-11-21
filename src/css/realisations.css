@@ -7,20 +7,17 @@
   padding: 2vh 0vw;
 }
 
-.section-rea span {
+.first-tittle-realisation {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #50faa8;
-  width: 100vw;
-  max-width: 300px;
-  margin: 20vh 0vw 0vh 0vw;
-}
-
-.section-rea h2 {
-  font-size: 30px;
-  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 900;
+  color: rgb(230, 230, 230);
   padding: 5px 0px;
+  margin: 20vh 0vw 0vh 0vw;
 }
 
 .rea-description {
@@ -45,10 +42,10 @@
 
 .all-realisations {
   margin-top: 7vh;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10vw;
+  gap: 10vw; */
 }
 
 .realisation {
@@ -63,12 +60,8 @@
 .visual-album {
   height: 300px;
 }
-
-.box-realisation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+.visual-album:hover {
+  opacity: 95%;
 }
 
 .box-realisation h4 {
@@ -91,24 +84,35 @@
 
 .realisation-link {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
   text-decoration: none;
   color: black;
-  background-color: #50faa8;
-  padding: 2px;
-  border-radius: 50%;
-  position: absolute;
-  top: -10px;
-  right: -5px;
 }
 
-.picto-more {
-  height: 30px;
+/* ********************************** */
+/* ************ Media query ************** */
+/* ********************************** */
+
+/* Mobile S/M/L 200 ===> 425 */
+@media (min-width: 200px) and (max-width: 425px) {
+  .first-tittle-realisation {
+    font-size: 40px;
+  }
+
+  .description-section {
+    margin: 2vh 10vw 1vh 10vw;
+  }
 }
 
-.picto-more:hover {
-  height: 35px;
-  transition: 0.3s;
+/* tablette 426 ===> 768 */
+@media (min-width: 426px) and (max-width: 768px) {
+  .first-tittle-realisation {
+    font-size: 50px;
+  }
+
+  .description-section {
+    margin: 2vh 10vw 1vh 10vw;
+  }
 }

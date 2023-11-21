@@ -18,12 +18,13 @@ const Home = () => {
   return (
     <>
       <main className="container">
-        <div className="img-center">
-          <img
-            className="artists"
-            src="https://res.cloudinary.com/dn7pf2dts/image/upload/v1681904960/AnonymousLabel/Accueil/groupe04_aernra.jpg"
-            alt="Artistes"
-          />
+        <div className="video-center-height">
+          <video className="video-center" loop autoPlay="autoplay">
+            <source
+              src="https://res.cloudinary.com/dn7pf2dts/video/upload/v1700556766/AnonymousLabel/Accueil/Disque_jvh6mq.mp4"
+              type="video/mp4"
+            ></source>
+          </video>
         </div>
 
         {/* à la UNE */}

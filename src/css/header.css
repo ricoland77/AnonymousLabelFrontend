@@ -235,9 +235,10 @@
 
 /* Mobile S/M/L 200 ===> 425 */
 @media (min-width: 200px) and (max-width: 425px) {
-  /* .integer-header {
-    width: 100vw;
-  } */
+  .btn-login,
+  .btn-signup {
+    font-size: 9px;
+  }
 
   .header-nav {
     display: none;

@@ -230,7 +230,7 @@ const Header = ({
                 Nos réalisations
               </NavLink>
             </li>
-            <li
+            {/* <li
               onClick={() => {
                 window.scrollTo(0, 0);
               }}
@@ -241,7 +241,7 @@ const Header = ({
               >
                 Actualités
               </NavLink>
-            </li>
+            </li> */}
             <li
               onClick={() => {
                 window.scrollTo(0, 0);
@@ -285,7 +285,7 @@ const Header = ({
                   </NavLink>
                 </div>
 
-                <div className="sous-menu">
+                {/* <div className="sous-menu">
                   <div className="element-sous-menu">
                     <NavLink
                       to="/studio/cartecadeau"
@@ -294,7 +294,7 @@ const Header = ({
                       Carte cadeau
                     </NavLink>
                   </div>
-                </div>
+                </div> */}
               </div>
             </li>
 

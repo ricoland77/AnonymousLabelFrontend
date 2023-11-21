@@ -16,17 +16,9 @@ const Studio = () => {
   return (
     <>
       <main className="container">
-        <div className="img-center">
-          <img
-            className="artists"
-            src="https://res.cloudinary.com/dn7pf2dts/image/upload/v1680796537/AnonymousLabel/studio/studio_jumik4.jpg"
-            alt="Artistes"
-          />
-        </div>
-
         <section className="section-studio">
           <span>
-            <h2>Notre studio</h2>
+            <h2 className="first-tittle-studio">Studio AR13</h2>
           </span>
           <div className="all-specifications">
             <div className="specification">
@@ -44,7 +36,7 @@ const Studio = () => {
           </div>
 
           <span>
-            <h2>Équipement</h2>
+            <h2 className="second-titlle-equipment">Équipement</h2>
           </span>
           <div className="all-specifications">
             <div className="specification">
@@ -101,7 +93,7 @@ const Studio = () => {
 
         <section className="section-studio">
           <span>
-            <h2>Découvrez nos collab'</h2>
+            <h2 className="second-titlle-equipment">Découvrez nos collab'</h2>
           </span>
 
           <div className="all-artists-box">
